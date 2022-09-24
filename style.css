@@ -1,0 +1,149 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+
+  height: 100vh;
+  max-height: 100vh;
+
+  background-color: #f5f7dc;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+
+  border: none;
+  border-radius: 30px;
+
+  background-color: #e65f5c;
+  color: white;
+
+  font-weight: bold;
+  font-size: 15pt;
+  letter-spacing: 6px;
+  line-height: 15pt;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  animation: tremble 0.1s infinite;
+}
+
+button:focus {
+  animation: dissolve 1s ease-in-out;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.memory__container {
+  width: 60%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+  /* disable selection cross-browser */
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.memory__card {
+  height: 100px;
+  width: 100px;
+  background-color: #b5d99c;
+  font-size: 70px;
+  text-align: center;
+
+  animation: flip .8s ease-in-out;
+}
+
+.front,
+.solved {
+  background-color: #0f0326;
+  color: black;
+  animation: flip-back .8s ease-in-out;
+}
+
+.back {
+  color: transparent;
+}
+
+@media screen and (max-width: 990px) {
+    .memory__container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .memory__card {
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .memory__card {
+        height: 60px;
+        width: 60px;
+    }
+}
+
+
+@keyframes dissolve {
+  40% {
+    transform: scale(1.6);
+  }
+  60% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes tremble {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(-2px, +2px);
+  }
+  50% {
+    transform: translate(0px, -0px);
+  }
+  75% {
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    transform: translate(0px, -0px);
+  }
+}
+
+@keyframes flip {
+  0% {
+    background-color: #0f0326;
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+}
+
+@keyframes flip-back {
+  0% {
+    background-color: #b5d99c;
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+}
