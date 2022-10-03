@@ -1,0 +1,27 @@
+.memory__container {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.memory__card {
+    width: 100px;
+    height: 100px;
+    font-size: 0px;
+    border: 1px solid salmon;
+    text-align: center;
+    box-sizing: border-box;
+   
+}
+
+.flipped {
+    background-color: slateblue;
+    font-size: 70px;
+    
+}
+
+.match {
+    background-color: crimson;
+    font-size: 70px;
+    
+}
